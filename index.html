@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Binary Search Tree Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet">
+  </head>
+ <body>
+      <header>
+      <div class="head">
+        <div class="wrapper">
+          <h1 class="title">BINARY SEARCH TREE</h1>
+        </div>
+      </div>
+      <nav class="operations">
+        <div class="wrapper">
+          <div class="fields">
+            <div class="input-container">
+              <button class="act-btn" id="to-clear-btn">RESET BINARY SEARCH TREE</button>
+            </div>
+            <div class="input-container">
+              <input type="text" name="num" id="to-add" placeholder="Enter an integer" maxlength="4">
+              <button type="submit" class="act-btn" id="to-add-btn">INSERT</button>
+            </div>
+            <div class="input-container">
+              <input type="text" name="num" id="to-search" placeholder="Enter an integer">
+              <button type="submit" class="act-btn" id="to-search-btn">SEARCH</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="shadow1" style="float: right;">
+      <div style="background-color: #c4d4cf; display: block; padding: 15px 0; text-align: center; width: 675px;">
+        <a style="color: #334741; margin: 0 2em; text-decoration: none;" href="#firstly">Introduction</a> 
+        <a style="color: #334741; margin: 0 2em; text-decoration: none;" href="#second">Insert</a> 
+        <a style="color: #334741; margin: 0 2em; text-decoration: none;" href="#third">Search</a>
+        <a style="color: #334741; margin: 0 2em; text-decoration: none;" href="#fourth">Reset</a>
+      </div>
+      <div class="smooth" style="background-color: #eaeaea; display: block; height: 700px; overflow-y: scroll; text-align: center; width: 675px;">
+        <div id="firstly" style="background-color: #e5f1e4; display: flex; flex-direction: column; text-align: left; justify-content: start; width: 100%; height: 1175px; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px; font-size: 19px">
+          <h2>Binary Search Tree</h2>
+          <p>In Computer Science, trees refer to a widely used abstract data structure that is hierachical in nature, containing a root node that spans into sub-trees which child nodes that are all linked. </p> 
+          <br>
+          <p>Binary Search Trees are built upon the architecture of a basic binary search algorithm. Hence, Binary Search Trees enable quicker lookups, insertions and removal of nodes. </pr>
+          <br>
+          <br>
+          <p>A Binary Search Tree has the following properties:</p>
+          <br>
+          <ul>
+            <li>The left sub-tree of a node consists of nodes with integers that are less than the integer stored in the node itself.</li><br>
+            <li>The right sub-tree of a node consists of nodes with integers that are greater than the integer stored in the node itself.</li><br>
+            <li>The left and right sub-trees of a node should be Binary Search Trees themselves.</li>
+          </ul>
+          <br>
+          <p>In order for a tree to be considered a Binary Search Tree, it must abide by the above properties. Hence, Binary Search Trees can only contain distinct values and no duplicate values.</p>
+          <br>
+          <br>
+          <h2>How To Use This Tool</h2>
+          <p>This tool is meant to demonstrate the basic working principles of a Binary Search Tree. As nodes are inserted, the Binary Search Tree will appear in the empty canvas on the left. </p>
+          <br>
+          There are 2 main operations featured in this tool: 
+          <ol>
+            <li>Insert</li>
+            <br>
+            <li>Search</li>
+            <br>
+          </ol>
+          <p>Scroll down along this box for instructions on how to execute the operations.</p>
+        </div>
+        <div id="second" style="background-color: #e5dce0; display: flex; flex-direction: column; text-align: left; justify-content: start; width: 100%; height: 420px; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px; font-size: 19px">
+          <h2>Insert a Node</h2>
+          <p>To insert a node into the Binary Search Tree:</p>
+          <br>
+          <ol>
+            <li>In the 'INSERT' input box, enter an integer of maximum 4 digits</li><br>
+            <li>Press 'INSERT'</li><br>
+            <li>The interger inserted will appear as a green node in the Binary Search Tree, with the path to the node highlighted in blue.</LI><br>
+            <li>The Insert operation is complete</li>
+        </div>
+        <div id="third" style="background-color: #d9f0fc; display: flex; flex-direction: column; text-align: left; justify-content: start; width: 100%; height: 520px; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px; font-size: 19px">
+          <h2>Search for a Node</h2> 
+          <p>To search for a node in the Binary Search Tree:</p><br>
+          <ol>
+            <li>In the 'SEARCH' input box, enter an integer to be searched in the Binary Search Tree</li><br>
+            <li>Press 'SEARCH'</li><br>
+            <li>The Binary Search Tree executes a search and highlights the path to the node in red</li><br>
+            <li>If the node is not found, a pop-up will appear to indicate that the node was not found in the tree.</li><br>
+            <li>The Search operation is complete</li>
+          </ol>
+        </div>
+        <div id="fourth" style="background-color: #f4fccf; display: flex; flex-direction: column; text-align: left; justify-content: start; width: 100%; height: 300px; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px; font-size: 19px">
+        <h2>Reset the Binary Search Tree</h2>
+        <p>To erase all the nodes in the Binary Search Tree, press the "RESET BINARY SEARCH TREE" button at the top left.</p><br>
+        </div>
+      </div>
+    </div>
+
+    <div id="container"></div>
+    <script src="sketch.js"></script>
+    <script src="BinarySearchTree.js"></script>
+    <script src="Node.js"></script>
+
+  
+
+</body></html>
