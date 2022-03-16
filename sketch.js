@@ -27,7 +27,7 @@ function setup() {
 function draw() {  
   UIButtonsClick();  
   UIButtonsActive();
-  addNotes();
+  //addNotes();
 }
 
 
